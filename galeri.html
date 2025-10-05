@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Siltem Silivri Temizlik hizmetlerimizden fotoğraflar. Villa temizliği, boş ev temizliği ve inşaat sonrası temizlik çalışmalarımız.">
+    <meta name="keywords" content="Silivri temizlik galeri, Siltem temizlik fotoğraflar, villa temizliği örnekleri, temizlik öncesi sonrası">
+    <meta name="author" content="Siltem Silivri Temizlik">
+    <title>Galeri | Siltem Silivri Temizlik - Çalışmalarımız</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .header-contact a {
+            color: #0f172a;
+            text-decoration: none;
+        }
+
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex: 1;
+            justify-content: flex-end;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav ul li a {
+            color: #475569;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: -0.01em;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #0f172a;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 76px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 5rem 3rem 4rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            max-width: 1280px;
+            margin: 3rem auto 2rem;
+            padding: 0 3rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.8rem;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        .filter-btn:hover {
+            border-color: #cbd5e1;
+            color: #0f172a;
+        }
+
+        .filter-btn.active {
+            background: #0f172a;
+            color: white;
+            border-color: #0f172a;
+        }
+
+        /* Gallery Grid */
+        .gallery {
+            max-width: 1280px;
+            margin: 0 auto 5rem;
+            padding: 0 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: transform 0.3s;
+            background: #f1f5f9;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 2rem 1.5rem 1.5rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-overlay h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox img {
+            max-width: 100%;
+            max-height: 85vh;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -3rem;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: opacity 0.3s;
+        }
+
+        .lightbox-close:hover {
+            opacity: 0.7;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 3rem;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #0f172a;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0f1a;
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #0f172a;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 1.5rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .header-contact {
+                display: none;
+            }
+
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 0;
+                gap: 0;
+                display: none;
+                border-bottom: 1px solid #e5e7eb;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .page-header {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .filter-tabs {
+                padding: 0 1.5rem;
+            }
+
+            .gallery {
+                padding: 0 1.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .lightbox-nav {
+                font-size: 1.5rem;
+                padding: 0.5rem;
+            }
+
+            .lightbox-prev {
+                left: 0.5rem;
+            }
+
+            .lightbox-next {
+                right: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Siltem Silivri Temizlik</a>
+            <div class="nav-center">
+                <div class="header-contact">
+                    📞 <a href="tel:05015515228">0501 551 5228</a>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <ul id="navMenu">
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="galeri.html" class="active">Galeri</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>Çalışmalarımız</h1>
+        <p>Silivri'de gerçekleştirdiğimiz profesyonel temizlik hizmetlerinden örnekler</p>
+    </section>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+        <button class="filter-btn active" onclick="filterGallery('all')">Tümü</button>
+        <button class="filter-btn" onclick="filterGallery('villa')">Villa Temizliği</button>
+        <button class="filter-btn" onclick="filterGallery('bos-ev')">Boş Ev Temizliği</button>
+        <button class="filter-btn" onclick="filterGallery('insaat')">İnşaat Sonrası</button>
+        <button class="filter-btn" onclick="filterGallery('ofis')">Ofis Temizliği</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <section class="gallery">
+        <div class="gallery-grid">
+            <!-- Villa Temizliği -->
+            <div class="gallery-item" data-category="villa" onclick="openLightbox(this)">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.18.20.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Lüks Villa Temizliği</h3>
+                    <p>Silivri'de gerçekleştirilen villa temizlik hizmeti</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="villa" onclick="openLightbox(this)">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.18.20 (1).jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Villa Havuz Temizliği</h3>
+                    <p>Havuz dahil komple villa temizliği</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="villa" onclick="openLightbox(this)">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.17.24.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Villa Bahçe Bakımı</h3>
+                    <p>Bahçe ve dış alan temizliği</p>
+                </div>
+            </div>
+
+            <!-- Boş Ev Temizliği -->
+            <div class="gallery-item" data-category="bos-ev" onclick="openLightbox(this)">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.17.03.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Boş Daire Temizliği</h3>
+                    <p>Taşınma sonrası kapsamlı temizlik</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="bos-ev" onclick="openLightbox(this)">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.17.02.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Mutfak & Banyo</h3>
+                    <p>Detaylı mutfak ve banyo temizliği</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="bos-ev" onclick="openLightbox(this)">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.16.06 (1).jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Zemin Cilalama</h3>
+                    <p>Parke ve laminat zemin bakımı</p>
+                </div>
+            </div>
+
+            <!-- İnşaat Sonrası -->
+            <div class="gallery-item" data-category="insaat" onclick="openLightbox(this)">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.15.08 (2).jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Yeni Bina Temizliği</h3>
+                    <p>İnşaat artığı ve toz temizliği</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="insaat" onclick="openLightbox(this)">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.15.08 (1).jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Cam ve Pencere</h3>
+                    <p>Koruyucu sökümü ve cam temizliği</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="insaat" onclick="openLightbox(this)">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.15.08.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Boya & Alçı Temizliği</h3>
+                    <p>Tadilat sonrası detaylı temizlik</p>
+                </div>
+            </div>
+
+            <!-- Ofis Temizliği -->
+            <div class="gallery-item" data-category="ofis" onclick="openLightbox(this)">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.15.09.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Modern Ofis Temizliği</h3>
+                    <p>İşyeri hijyen ve temizlik hizmeti</p>
+                </div>
+            </div>
+
+            <div class="gallery-item" data-category="ofis" onclick="openLightbox(this)">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.16.06.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Ortak Alan Bakımı</h3>
+                    <p>Koridor, lobi ve sosyal alan temizliği</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox(event)">&times;</button>
+            <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1, event)">&#10094;</button>
+            <img id="lightbox-img" src="" alt="">
+            <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1, event)">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Sizin İçin de Çalışalım</h2>
+        <p>Profesyonel temizlik hizmeti için hemen iletişime geçin</p>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Siltem Silivri Temizlik</h3>
+                <p>Silivri'nin güvenilir temizlik çözüm ortağı. Profesyonel hizmet, kaliteli sonuç.</p>
+                <p style="margin-top: 1rem;">📞 <a href="tel:05015515228" style="display: inline;">0501 551 5228</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Hizmetlerimiz</h3>
+                <a href="#services">Silivri Villa Temizliği</a>
+                <a href="#services">Silivri Boş Ev Temizliği</a>
+                <a href="#services">İnşaat Sonrası Temizlik</a>
+                <a href="#services">Ofis Temizliği</a>
+                <a href="#services">Derin Temizlik</a>
+            </div>
+            <div class="footer-section">
+                <h3>Kurumsal</h3>
+                <a href="index.html">Anasayfa</a>
+                <a href="galeri.html">Galeri</a>
+                <a href="iletisim.html">İletişim</a>
+                <a href="#about">Hakkımızda</a>
+            </div>
+            <div class="footer-section">
+                <h3>Çalışma Saatleri</h3>
+                <p>Pazartesi - Cumartesi</p>
+                <p>08:00 - 19:00</p>
+                <p style="margin-top: 1rem;">Pazar: Randevulu</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Siltem Silivri Temizlik - Tüm Hakları Saklıdır</p>
+            <p> Creater by 2025 <a href="https://cefudigital.com" style="text-decoration: none; color: white;">CefuDigital Creative Agency</a></p>
+        </div>
+    </footer>
+        

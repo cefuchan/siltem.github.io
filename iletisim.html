@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Siltem Silivri Temizlik ile iletişime geçin. Villa temizliği, boş ev temizliği ve inşaat sonrası temizlik için randevu alın. ☎ 0501 551 5228">
+    <meta name="keywords" content="Silivri temizlik iletişim, Siltem temizlik randevu, Silivri temizlik telefon">
+    <meta name="author" content="Siltem Silivri Temizlik">
+    <title>İletişim | Siltem Silivri Temizlik ☎ 0501 551 5228</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+            gap: 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .header-contact a {
+            color: #0f172a;
+            text-decoration: none;
+        }
+
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex: 1;
+            justify-content: flex-end;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav ul li a {
+            color: #475569;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: -0.01em;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #0f172a;
+        }
+
+        /* Page Header */
+        .page-header {
+            margin-top: 76px;
+            background: #0f172a;
+            color: white;
+            padding: 5rem 3rem 4rem;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 5rem 3rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            width: 100%;
+        }
+
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #0f172a;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            transition: box-shadow 0.3s;
+        }
+
+        .info-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .info-icon {
+            font-size: 2rem;
+            min-width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #0f172a;
+            color: white;
+            border-radius: 8px;
+        }
+
+        .info-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .info-content p {
+            color: #64748b;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .info-content a {
+            color: #0f172a;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .info-content a:hover {
+            color: #475569;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: #f8fafc;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #0f172a;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            background: white;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #0f172a;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: #0f172a;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .submit-btn:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+        }
+
+        /* Map Section */
+        .map-section {
+            background: #f8fafc;
+            padding: 4rem 3rem;
+        }
+
+        .map-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .map-container h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        /* Working Hours */
+        .working-hours {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .working-hours h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #0f172a;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .hours-list {
+            display: grid;
+            gap: 0.8rem;
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            background: #f8fafc;
+            border-radius: 6px;
+            font-size: 1.05rem;
+        }
+
+        .day {
+            font-weight: 500;
+            color: #0f172a;
+        }
+
+        .time {
+            color: #64748b;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0f1a;
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #0f172a;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            background: #10b981;
+            color: white;
+            padding: 1rem;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 1.5rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .header-contact {
+                display: none;
+            }
+
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 0;
+                gap: 0;
+                display: none;
+                border-bottom: 1px solid #e5e7eb;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .page-header {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .contact-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .map-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .map-placeholder {
+                height: 300px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Siltem Silivri Temizlik</a>
+            <div class="nav-center">
+                <div class="header-contact">
+                    📞 <a href="tel:05015515228">0501 551 5228</a>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <ul id="navMenu">
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="iletisim.html" class="active">İletişim</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <h1>İletişime Geçin</h1>
+        <p>Silivri temizlik hizmetleri için bize ulaşın, size en uygun çözümü sunalım</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-info">
+            <h2>İletişim Bilgileri</h2>
+        </div>
+        <div class="contact-grid">
+            <div class="info-item">
+                <div class="info-icon">📞</div>
+                <div class="info-content">
+                    <h3>Telefon</h3>
+                    <p><a href="tel:05015515228">0501 551 5228</a></p>
+                    <p style="font-size: 0.95rem; margin-top: 0.5rem; opacity: 0.8;">Haftaiçi: 08:00 - 19:00</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">📧</div>
+                <div class="info-content">
+                    <h3>E-posta</h3>
+                    <p><a href="mailto:info@siltemtemizlik.com">info@siltemtemizlik.com</a></p>
+                    <p style="font-size: 0.95rem; margin-top: 0.5rem; opacity: 0.8;">7/24 yanıtlıyoruz</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">📍</div>
+                <div class="info-content">
+                    <h3>Hizmet Bölgesi</h3>
+                    <p>Silivri, İstanbul</p>
+                    <p style="font-size: 0.95rem; margin-top: 0.5rem; opacity: 0.8;">Silivri ve çevre ilçelere hizmet veriyoruz</p>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <div class="info-icon">⏰</div>
+                <div class="info-content">
+                    <h3>Çalışma Saatleri</h3>
+                    <p>Pazartesi - Cumartesi: 08:00 - 19:00</p>
+                    <p style="font-size: 0.95rem; margin-top: 0.5rem; opacity: 0.8;">Pazar: Randevulu hizmet</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="working-hours">
+            <h3>Haftalık Çalışma Programımız</h3>
+            <div class="hours-list">
+                <div class="hours-item">
+                    <span class="day">Pazartesi</span>
+                    <span class="time">08:00 - 19:00</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Salı</span>
+                    <span class="time">08:00 - 19:00</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Çarşamba</span>
+                    <span class="time">08:00 - 19:00</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Perşembe</span>
+                    <span class="time">08:00 - 19:00</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Cuma</span>
+                    <span class="time">08:00 - 19:00</span>
+                </div>
+                <div class="hours-item">
+                    <span class="day">Cumartesi</span>
+                    <span class="time">09:00 - 18:00</span>
+                </div>
+                <div class="hours-item" style="background: #fff7ed;">
+                    <span class="day" style="color: #ea580c;">Pazar</span>
+                    <span class="time" style="color: #ea580c; font-weight: 600;">Randevulu Hizmet</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <h2>Hizmet Bölgemiz</h2>
+            <div class="map-placeholder">
+                🗺️ Silivri ve Çevre İlçelere Hizmet Veriyoruz
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Siltem Silivri Temizlik</h3>
+                <p>Silivri'nin güvenilir temizlik çözüm ortağı. Profesyonel hizmet, kaliteli sonuç.</p>
+                <p style="margin-top: 1rem;">📞 <a href="tel:05015515228" style="display: inline;">0501 551 5228</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Hizmetlerimiz</h3>
+                <a href="index.html#services">Silivri Villa Temizliği</a>
+                <a href="index.html#services">Silivri Boş Ev Temizliği</a>
+                <a href="index.html#services">İnşaat Sonrası Temizlik</a>
+                <a href="index.html#services">Ofis Temizliği</a>
+                <a href="index.html#services">Derin Temizlik</a>
+            </div>
+            <div class="footer-section">
+                <h3>Kurumsal</h3>
+                <a href="index.html">Anasayfa</a>
+                <a href="galeri.html">Galeri</a>
+                <a href="iletisim.html">İletişim</a>
+                <a href="index.html#about">Hakkımızda</a>
+            </div>
+            <div class="footer-section">
+                <h3>Çalışma Saatleri</h3>
+                <p>Pazartesi - Cumartesi</p>
+                <p>08:00 - 19:00</p>
+                <p style="margin-top: 1rem;">Pazar: Randevulu</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Siltem Silivri Temizlik - Tüm Hakları Saklıdır</p>
+            <p> Creater by 2025 <a href="https://cefudigital.com" style="text-decoration: none; color: white;">CefuDigital Creative Agency</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Toggle
+        function toggleMenu() {
+            var menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            var nav = document.querySelector('nav');
+            var menu = document.getElementById('navMenu');
+            
+            if (nav && menu && !nav.contains(event.target)) {
+                menu.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Siltem Silivri Temizlik - Villa temizliği, boş ev temizliği ve inşaat sonrası temizlik hizmetleri. Profesyonel Silivri temizlik şirketi. ☎ 0501 551 5228">
+    <meta name="keywords" content="Silivri temizlik, Silivri Temizlik Şirketi, Silivri Temizlik Şirketleri, Silivri villa temizliği, Silivri Boş ev temizliği, Silivri İnşaat sonrası temizlik, Siltem">
+    <meta name="author" content="Siltem Silivri Temizlik">
+    <title>Siltem Silivri Temizlik | Villa, Ev ve İnşaat Temizliği ☎ 0501 551 5228</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        nav {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+            gap: 2rem;
+        }
+
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex: 1;
+            justify-content: flex-end;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: #0f172a;
+            letter-spacing: -0.02em;
+        }
+
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .header-contact a {
+            color: #0f172a;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 3rem;
+        }
+
+        nav ul li a {
+            color: #475569;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: -0.01em;
+        }
+
+        nav ul li a:hover {
+            color: #0f172a;
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 76px;
+            background: #0f172a;
+            color: white;
+            padding: 8rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.03em;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            max-width: 600px;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #0f172a;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 6rem 3rem;
+            background: white;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .gallery-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .gallery-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            transition: box-shadow 0.3s;
+            background: #f1f5f9;
+            border: 1px solid #e5e7eb;
+        }
+
+        .gallery-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: none;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+            padding: 2rem 1.5rem 1.5rem;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+            text-align: left;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .gallery-overlay h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .gallery-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .gallery-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .gallery-link {
+            display: inline-block;
+            background: #0f172a;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 1rem;
+        }
+
+        .gallery-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 3rem;
+            background: #f8fafc;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #0f172a;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: #475569;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #64748b;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 3rem;
+            background: white;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0f172a;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-color: #cbd5e1;
+        }
+
+        .service-card h3 {
+            color: #0f172a;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: #64748b;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .service-card ul {
+            margin-top: 1rem;
+            padding-left: 1.2rem;
+            color: #64748b;
+        }
+
+        .service-card li {
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        /* Why Us Section */
+        .why-us {
+            padding: 6rem 3rem;
+            background: #1e293b;
+            color: white;
+        }
+
+        .why-us-content {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .why-us h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .why-us-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            padding: 2rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .feature h3 {
+            color: white;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .feature p {
+            color: rgba(255,255,255,0.8);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 6rem 3rem;
+            background: #f8fafc;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #0f172a;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step h3 {
+            color: #0f172a;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .step p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 5rem 3rem;
+            background: #0f172a;
+            color: white;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #0a0f1a;
+            color: rgba(255,255,255,0.7);
+            padding: 3rem 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .footer-section p, .footer-section a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #0f172a;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 1.5rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .header-contact {
+                display: none;
+            }
+
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 0;
+                gap: 0;
+                display: none;
+                border-bottom: 1px solid #e5e7eb;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .gallery-section {
+                padding: 4rem 1.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .hero {
+                padding: 4rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .about, .services, .why-us-content, .process {
+                padding: 4rem 1.5rem;
+            }
+
+            .section-header h2, .about h2, .why-us h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Siltem Silivri Temizlik</a>
+            <div class="nav-center">
+                <div class="header-contact">
+                    📞 <a href="tel:05015515228">0501 551 5228</a>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <ul id="navMenu">
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Silivri'nin Profesyonel<br>Temizlik Çözüm Ortağı</h1>
+            <p>Villa temizliğinden inşaat sonrası temizliğe, boş ev temizliğinden ofis hijyenine kadar tüm temizlik ihtiyaçlarınız için güvenilir hizmet.</p>
+            <a href="iletisim.html" class="cta-button">Ücretsiz Keşif Talep Et</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <h2>Çalışmalarımızdan Görüntüler</h2>
+        <p class="gallery-intro">Silivri'de gerçekleştirdiğimiz profesyonel temizlik hizmetlerinden örnekler</p>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.09.50.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Villa Temizliği</h3>
+                    <p>Lüks villa temizlik hizmeti</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                    <img src="gallery/WhatsApp Image 2025-09-30 at 14.11.03.jpeg" alt="Silivri Villa Temizliği" width="800" height="600"> 
+                    <div class="gallery-overlay">
+                    <h3>Boş Ev Temizliği</h3>
+                    <p>Taşınma sonrası derin temizlik</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                    <img src="gallery/WhatsApp Image 2025-09-30 at 14.15.08.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                    <div class="gallery-overlay">
+                    <h3>İnşaat Sonrası Temizlik</h3>
+                    <p>Yapım artıkları temizliği</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                    <img src="gallery/WhatsApp Image 2025-09-30 at 14.10.40.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">                
+                    <div class="gallery-overlay">
+                    <h3>Ofis Temizliği</h3>
+                    <p>Profesyonel işyeri hijyeni</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                    <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.55.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">        
+                    <div class="gallery-overlay">
+                    <h3>Cam Temizliği</h3>
+                    <p>Pencere ve cam yüzey temizliği</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.55 (1).jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Koltuk & Halı Yıkama</h3>
+                    <p>Derin koltuk ve halı temizliği</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.54.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
+                <div class="gallery-overlay">
+                    <h3>Mutfak Temizliği</h3>
+                    <p>Detaylı mutfak hijyeni</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                    <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.54 (3).jpeg" alt="Silivri Villa Temizliği" width="800" height="600">                
+                    <div class="gallery-overlay">
+                    <h3>Banyo Temizliği</h3>
+                    <p>Derin banyo dezenfeksiyonu</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                    <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.54 (2).jpeg" alt="Silivri Villa Temizliği" width="800" height="600">                
+                    <div class="gallery-overlay">
+                    <h3>Havuz Temizliği</h3>
+                    <p>Villa havuz bakım ve temizliği</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.54 (1).jpeg" alt="Silivri Villa Temizliği" width="800" height="600">                
+                <div class="gallery-overlay">
+                    <h3>Bahçe Temizliği</h3>
+                    <p>Dış alan ve bahçe bakımı</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.54.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">                
+                <div class="gallery-overlay">
+                    <h3>Zemin Cilalama</h3>
+                    <p>Parke ve laminat cilalama</p>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.17.jpeg    " alt="Silivri Villa Temizliği" width="800" height="600">                
+                <div class="gallery-overlay">
+                    <h3>Perde Yıkama</h3>
+                    <p>Profesyonel perde temizliği</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-cta">
+            <a href="galeri.html" class="gallery-link">Tüm Galeriyi Görüntüle</a>
+        </div>
+    </section>
+                <div class="gallery-overlay">
+                    <h3>Koltuk & Halı Yıkama</h3>
+                    <p>Derin koltuk ve halı temizliği</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="about-content">
+            <h2>Silivri Temizlik Şirketi Olarak Biz Kimiz?</h2>
+            <p>Silivri temizlik sektöründe uzun yıllara dayanan deneyimimizle, bölgedeki en güvenilir temizlik şirketleri arasında yer alıyoruz. Silivri'de villa temizliği, boş ev temizliği ve inşaat sonrası temizlik konularında uzmanlaşmış ekibimizle, her türlü temizlik projesine profesyonel çözümler sunuyoruz.</p>
+            
+            <p>Silivri temizlik şirketi olarak misyonumuz, müşterilerimize sadece temizlik hizmeti değil, aynı zamanda güven, kalite ve huzur sunmaktır. Sertifikalı personelimiz, çevre dostu temizlik ürünleri ve son teknoloji ekipmanlarımızla, Silivri'deki konut ve işyerlerine özel temizlik çözümleri geliştiriyoruz.</p>
+
+            <p>Silivri bölgesinde faaliyet gösteren temizlik şirketleri arasında fark yaratan en önemli özelliğimiz, müşteri memnuniyetine verdiğimiz önemdir. Her projede, villa temizliği olsun, boş ev temizliği olsun ya da inşaat sonrası temizlik hizmeti olsun, aynı titizlik ve profesyonellikle çalışıyoruz. Detay odaklı yaklaşımımız ve kalite standartlarımız sayesinde, Silivri'de temizlik hizmeti arayan bireysel ve kurumsal müşterilerin tercih ettiği firma olduk.</p>
+
+            <div class="about-stats">
+                <div class="stat">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Yıllık Deneyim</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Mutlu Müşteri</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">%100</div>
+                    <div class="stat-label">Memnuniyet Garantisi</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="section-header">
+            <h2>Silivri Temizlik Hizmetlerimiz</h2>
+            <p>Profesyonel ekibimiz ve modern ekipmanlarımızla, her türlü temizlik ihtiyacınıza özel çözümler sunuyoruz.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Silivri Villa Temizliği</h3>
+                <p>Silivri'deki villalar için özel olarak tasarlanmış kapsamlı temizlik hizmetimiz, evinizin her köşesine profesyonel dokunuş sağlar. Villa temizliği hizmetimiz, geniş yaşam alanlarının gerektirdiği özel dikkat ve detaylı çalışmayı içerir.</p>
+                <ul>
+                    <li>İç mekan detaylı temizlik</li>
+                    <li>Bahçe ve dış alan temizliği</li>
+                    <li>Havuz bakım ve temizliği</li>
+                    <li>Cam cephe ve pencere temizliği</li>
+                    <li>Mobilya ve döşeme bakımı</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Silivri Boş Ev Temizliği</h3>
+                <p>Taşınma öncesi veya sonrası Silivri'de boş ev temizliği hizmeti, evinizin teslim veya teslim alma aşamasında pırıl pırıl olmasını sağlar. Boş ev temizliği kapsamında, evin tüm bölümlerinde derin temizlik yapılır.</p>
+                <ul>
+                    <li>Oda ve salon genel temizliği</li>
+                    <li>Mutfak ve banyo dezenfeksiyonu</li>
+                    <li>Dolap içi temizliği</li>
+                    <li>Zemin cilalama ve parlatma</li>
+                    <li>Pencere ve kapı pervazları</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Silivri İnşaat Sonrası Temizlik</h3>
+                <p>İnşaat veya tadilat sonrası Silivri'de profesyonel temizlik hizmeti, yapım artıklarının tamamen temizlenmesini sağlar. İnşaat sonrası temizlik, özel ekipman ve deneyim gerektiren zorlu bir süreçtir.</p>
+                <ul>
+                    <li>Boya, alçı ve çimento artığı temizliği</li>
+                    <li>İnce toz ve kir giderimi</li>
+                    <li>Cam ve yüzey koruyucu sökümü</li>
+                    <li>Zemin ve duvar yüzey temizliği</li>
+                    <li>Elektrik ve tesisat temizliği</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Ofis ve İşyeri Temizliği</h3>
+                <p>Silivri'deki ofisler ve işyerleri için düzenli veya periyodik temizlik hizmetimiz, çalışma ortamınızın hijyenik ve düzenli kalmasını sağlar.</p>
+                <ul>
+                    <li>Günlük veya haftalık ofis temizliği</li>
+                    <li>Ortak alan hijyeni</li>
+                    <li>Cam bölme ve vitrin temizliği</li>
+                    <li>Mutfak ve sosyal alan bakımı</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Derin Temizlik Hizmeti</h3>
+                <p>Mevsimlik veya özel durumlar için Silivri'de derin temizlik hizmeti, evinizin ya da işyerinizin her detayının titizlikle temizlenmesini kapsar.</p>
+                <ul>
+                    <li>Koltuk ve halı yıkama</li>
+                    <li>Perde yıkama ve bakımı</li>
+                    <li>Beyaz eşya temizliği</li>
+                    <li>Dolap ve raf düzenleme</li>
+                </ul>
+            </div>
+            <div class="service-card">
+                <h3>Özel Alan Temizliği</h3>
+                <p>Teras, balkon, garaj ve diğer özel alanlarınız için Silivri'de profesyonel temizlik çözümleri sunuyoruz.</p>
+                <ul>
+                    <li>Teras ve balkon yıkama</li>
+                    <li>Garaj ve bodrum temizliği</li>
+                    <li>Çatı ve oluk temizliği</li>
+                    <li>Dış cephe yıkama</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="section-header">
+            <h2>Çalışma Sürecimiz</h2>
+            <p>Silivri temizlik hizmetimiz, profesyonel bir süreç ile yönetilir ve müşteri memnuniyeti odaklıdır.</p>
+        </div>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>İletişim ve Keşif</h3>
+                <p>İhtiyaçlarınızı dinliyor, Silivri'deki adresinize ücretsiz keşif yapıyoruz.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Fiyat Teklifi</h3>
+                <p>Detaylı inceleme sonrası, şeffaf ve net fiyat teklifimizi sunuyoruz.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Planlama</h3>
+                <p>Size uygun tarih ve saatte ekibimizi organize ediyoruz.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Profesyonel Temizlik</h3>
+                <p>Deneyimli ekibimiz, en yüksek standartlarda temizlik hizmeti gerçekleştiriyor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section class="why-us">
+        <div class="why-us-content">
+            <h2>Neden Silivri Temizlik'i Tercih Etmelisiniz?</h2>
+            <p class="why-us-intro">Silivri temizlik şirketleri arasında öne çıkan özelliklerimiz ve müşterilerimize sunduğumuz değerler.</p>
+            <div class="features">
+                <div class="feature">
+                    <h3>Uzman ve Eğitimli Kadro</h3>
+                    <p>Silivri'de temizlik hizmeti veren ekibimiz, sektörde deneyimli ve sürekli eğitim alan profesyonellerden oluşur. Her personelimiz, temizlik tekniklerinde uzmanlaşmış ve müşteri memnuniyeti odaklı çalışmaktadır.</p>
+                </div>
+                <div class="feature">
+                    <h3>Çevre Dostu Ürünler</h3>
+                    <p>Silivri villa temizliği ve diğer hizmetlerimizde, insan sağlığına ve çevreye zarar vermeyen, biyolojik olarak parçalanabilen temizlik ürünleri kullanıyoruz. Hem evinizi hem de doğayı koruyoruz.</p>
+                </div>
+                <div class="feature">
+                    <h3>Modern Ekipman</h3>
+                    <p>Silivri inşaat sonrası temizlik ve diğer zorlu işlerde bile mükemmel sonuç almak için en güncel temizlik teknolojilerini kullanıyoruz. Profesyonel makinalar ve ekipmanlarla hizmet kalitemizi artırıyoruz.</p>
+                </div>
+                <div class="feature">
+                    <h3>Sigortalı Hizmet</h3>
+                    <p>Silivri boş ev temizliği dahil tüm hizmetlerimizde, sigortalı ve güvenceli çalışma prensibiyle hareket ediyoruz. Müşterilerimizin güvenliği ve huzuru bizim için önceliktir.</p>
+                </div>
+                <div class="feature">
+                    <h3>Esnek Çalışma Saatleri</h3>
+                    <p>Silivri'de temizlik hizmeti sunarken, müşterilerimizin programına uygun esnek randevu seçenekleri sunuyoruz. Hafta içi, hafta sonu veya size özel saatlerde hizmet verebiliriz.</p>
+                </div>
+                <div class="feature">
+                    <h3>Şeffaf Fiyatlandırma</h3>
+                    <p>Silivri temizlik şirketi olarak, gizli masraf veya ek ücret olmadan, net ve şeffaf fiyat politikası uyguluyoruz. Aldığınız hizmetin karşılığını tam olarak biliyorsunuz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Silivri'de Profesyonel Temizlik İçin Bize Ulaşın</h2>
+        <p>Villa temizliği, boş ev temizliği veya inşaat sonrası temizlik için hemen iletişime geçin.</p>
+        <a href="iletisim.html" class="cta-button">Hemen Teklif Alın</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Siltem Silivri Temizlik</h3>
+                <p>Silivri'nin güvenilir temizlik çözüm ortağı. Profesyonel hizmet, kaliteli sonuç.</p>
+                <p style="margin-top: 1rem;">📞 <a href="tel:05015515228" style="display: inline;">0501 551 5228</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>Hizmetlerimiz</h3>
+                <a href="#services">Silivri Villa Temizliği</a>
+                <a href="#services">Silivri Boş Ev Temizliği</a>
+                <a href="#services">İnşaat Sonrası Temizlik</a>
+                <a href="#services">Ofis Temizliği</a>
+                <a href="#services">Derin Temizlik</a>
+            </div>
+            <div class="footer-section">
+                <h3>Kurumsal</h3>
+                <a href="index.html">Anasayfa</a>
+                <a href="galeri.html">Galeri</a>
+                <a href="iletisim.html">İletişim</a>
+                <a href="#about">Hakkımızda</a>
+            </div>
+            <div class="footer-section">
+                <h3>Çalışma Saatleri</h3>
+                <p>Pazartesi - Cumartesi</p>
+                <p>08:00 - 19:00</p>
+                <p style="margin-top: 1rem;">Pazar: Randevulu</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Siltem Silivri Temizlik - Tüm Hakları Saklıdır</p>
+            <p> Creater by 2025 <a href="https://cefudigital.com" style="text-decoration: none; color: white;">CefuDigital Creative Agency</a></p>
+        </div>
+    </footer>
