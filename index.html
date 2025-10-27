@@ -8,637 +8,754 @@
     <meta name="author" content="Siltem Silivri Temizlik">
     <title>Siltem Silivri Temizlik | Villa, Ev ve İnşaat Temizliği ☎ 0501 551 5228</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.7;
-            color: #1a1a1a;
-            background: #ffffff;
-        }
-
-        /* Header & Navigation */
-        header {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 1.2rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-        }
-
-        nav {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 3rem;
-            gap: 2rem;
-        }
-
-        .nav-center {
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            flex: 1;
-            justify-content: flex-end;
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 600;
-            text-decoration: none;
-            color: #0f172a;
-            letter-spacing: -0.02em;
-        }
-
-        .header-contact {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #0f172a;
-        }
-
-        .header-contact a {
-            color: #0f172a;
-            text-decoration: none;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 3rem;
-        }
-
-        nav ul li a {
-            color: #475569;
-            text-decoration: none;
-            transition: color 0.3s;
-            font-weight: 500;
-            font-size: 0.95rem;
-            letter-spacing: -0.01em;
-        }
-
-        nav ul li a:hover {
-            color: #0f172a;
-        }
-
-        /* Hero Section */
-        .hero {
-            margin-top: 76px;
-            background: #0f172a;
-            color: white;
-            padding: 8rem 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05) 0%, transparent 50%),
-                              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 50%);
-            opacity: 0.6;
-        }
-
-        .hero-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.03em;
-        }
-
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            max-width: 600px;
-            font-weight: 400;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #0f172a;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            font-size: 1rem;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.15);
-        }
-
-        /* Gallery Section */
-        .gallery-section {
-            padding: 6rem 3rem;
-            background: white;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .gallery-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #0f172a;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .gallery-intro {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #64748b;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            aspect-ratio: 4/3;
-            cursor: pointer;
-            transition: box-shadow 0.3s;
-            background: #f1f5f9;
-            border: 1px solid #e5e7eb;
-        }
-
-        .gallery-item:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: none;
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
-            padding: 2rem 1.5rem 1.5rem;
-            color: white;
-            transform: translateY(100%);
-            transition: transform 0.3s;
-            text-align: left;
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .gallery-overlay h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.3rem;
-            font-weight: 600;
-        }
-
-        .gallery-overlay p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        .gallery-cta {
-            text-align: center;
-            margin-top: 3rem;
-        }
-
-        .gallery-link {
-            display: inline-block;
-            background: #0f172a;
-            color: white;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-            font-size: 1rem;
-        }
-
-        .gallery-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-        }
-
-        /* About Section */
-        .about {
-            padding: 6rem 3rem;
-            background: #f8fafc;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .about h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            color: #0f172a;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .about p {
-            font-size: 1.1rem;
-            color: #475569;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .stat {
-            text-align: center;
-            padding: 2rem;
-            background: white;
-            border-radius: 8px;
-            border: 1px solid #e5e7eb;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #0f172a;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            color: #64748b;
-            font-size: 0.95rem;
-            font-weight: 500;
-        }
-
-        /* Services Section */
-        .services {
-            padding: 6rem 3rem;
-            background: white;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #0f172a;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: #64748b;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 8px;
-            border: 1px solid #e5e7eb;
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-color: #cbd5e1;
-        }
-
-        .service-card h3 {
-            color: #0f172a;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
-            font-weight: 600;
-        }
-
-        .service-card p {
-            color: #64748b;
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-
-        .service-card ul {
-            margin-top: 1rem;
-            padding-left: 1.2rem;
-            color: #64748b;
-        }
-
-        .service-card li {
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        /* Why Us Section */
-        .why-us {
-            padding: 6rem 3rem;
-            background: #1e293b;
-            color: white;
-        }
-
-        .why-us-content {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .why-us h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .why-us-intro {
-            text-align: center;
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.8);
-            max-width: 700px;
-            margin: 0 auto 4rem;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature {
-            padding: 2rem;
-            background: rgba(255,255,255,0.05);
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .feature h3 {
-            color: white;
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .feature p {
-            color: rgba(255,255,255,0.8);
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
-
-        /* Process Section */
-        .process {
-            padding: 6rem 3rem;
-            background: #f8fafc;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: #0f172a;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 0 auto 1.5rem;
-        }
-
-        .step h3 {
-            color: #0f172a;
-            margin-bottom: 0.8rem;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .step p {
-            color: #64748b;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding: 5rem 3rem;
-            background: #0f172a;
-            color: white;
-            text-align: center;
-        }
-
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        /* Footer */
-        footer {
-            background: #0a0f1a;
-            color: rgba(255,255,255,0.7);
-            padding: 3rem 3rem 2rem;
-        }
-
-        .footer-content {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            color: white;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .footer-section p, .footer-section a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            display: block;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .footer-section a:hover {
-            color: white;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.5);
-            font-size: 0.9rem;
-        }
-
-        /* Mobile Menu Toggle */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: #0f172a;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav {
-                padding: 0 1.5rem;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .header-contact {
-                display: none;
-            }
-
-            nav ul {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 1rem 0;
-                gap: 0;
-                display: none;
-                border-bottom: 1px solid #e5e7eb;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            nav ul li {
-                padding: 0.8rem 1.5rem;
-            }
-
-            .gallery-section {
-                padding: 4rem 1.5rem;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .hero {
-                padding: 4rem 1.5rem;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .about, .services, .why-us-content, .process {
-                padding: 4rem 1.5rem;
-            }
-
-            .section-header h2, .about h2, .why-us h2 {
-                font-size: 2rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.7;
+    color: #1a1a1a;
+    background: #ffffff;
+}
+
+/* Header & Navigation */
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1.2rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+nav {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+    gap: 2rem;
+}
+
+.nav-center {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+}
+
+.header-contact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.header-contact a {
+    color: #0f172a;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+}
+
+nav ul li a {
+    color: #475569;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+}
+
+nav ul li a:hover {
+    color: #0f172a;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 76px;
+    background: #0f172a;
+    color: white;
+    padding: 8rem 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle at 20% 30%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 50%);
+    opacity: 0.6;
+}
+
+.hero-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+    max-width: 600px;
+    font-weight: 400;
+}
+
+.cta-button {
+    display: inline-block;
+    background: white;
+    color: #0f172a;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* Before After Section */
+.before-after-section {
+    padding: 6rem 3rem;
+    background: #f8fafc;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.before-after-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.before-after-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.before-after-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.comparison-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.comparison-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.image-box {
+    position: relative;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-label {
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(15, 23, 42, 0.9);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.comparison-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.comparison-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.comparison-info p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* Gallery Section */
+.gallery-section {
+    padding: 6rem 3rem;
+    background: white;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.gallery-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    aspect-ratio: 4/3;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+    background: #f1f5f9;
+    border: 1px solid #e5e7eb;
+}
+
+.gallery-item:hover {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: none;
+}
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent);
+    padding: 2rem 1.5rem 1.5rem;
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-overlay h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.gallery-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.gallery-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.gallery-link {
+    display: inline-block;
+    background: #0f172a;
+    color: white;
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 1rem;
+}
+
+.gallery-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+/* About Section */
+.about {
+    padding: 6rem 3rem;
+    background: #f8fafc;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #0f172a;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.about p {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #64748b;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Services Section */
+.services {
+    padding: 6rem 3rem;
+    background: white;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #0f172a;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: #64748b;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-color: #cbd5e1;
+}
+
+.service-card h3 {
+    color: #0f172a;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: #64748b;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.service-card ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+    color: #64748b;
+}
+
+.service-card li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+/* Why Us Section */
+.why-us {
+    padding: 6rem 3rem;
+    background: #1e293b;
+    color: white;
+}
+
+.why-us-content {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.why-us h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.why-us-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.8);
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    padding: 2rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.feature h3 {
+    color: white;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.feature p {
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* Process Section */
+.process {
+    padding: 6rem 3rem;
+    background: #f8fafc;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.step {
+    text-align: center;
+    position: relative;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: #0f172a;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+}
+
+.step h3 {
+    color: #0f172a;
+    margin-bottom: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.step p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 5rem 3rem;
+    background: #0f172a;
+    color: white;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    background: #0a0f1a;
+    color: rgba(255,255,255,0.7);
+    padding: 3rem 3rem 2rem;
+}
+
+.footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.footer-section p, .footer-section a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.5);
+    font-size: 0.9rem;
+}
+
+/* Mobile Menu Toggle */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #0f172a;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (min-width: 769px) {
+    .before-after-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0 1.5rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .header-contact {
+        display: none;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        padding: 1rem 0;
+        gap: 0;
+        display: none;
+        border-bottom: 1px solid #e5e7eb;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .before-after-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .before-after-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .comparison-item {
+        max-width: 100%;
+    }
+
+    .comparison-images {
+        grid-template-columns: 1fr;
+        gap: 1px;
+    }
+
+    .image-box {
+        aspect-ratio: 4/3;
+    }
+
+    .gallery-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .hero {
+        padding: 4rem 1.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .about, .services, .why-us-content, .process {
+        padding: 4rem 1.5rem;
+    }
+
+    .section-header h2, .about h2, .why-us h2 {
+        font-size: 2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -677,50 +794,50 @@
             <div class="gallery-item">
                 <img src="gallery/WhatsApp Image 2025-09-30 at 14.09.50.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
                 <div class="gallery-overlay">
-                    <h3>Villa Temizliği</h3>
-                    <p>Lüks villa temizlik hizmeti</p>
+                    <h3>İnşaat Sonrası Temizlik</h3>
+                    <p>İnşaat sonrasındaki temizlik hizmeti.</p>
                 </div>
             </div>
             <div class="gallery-item">
                     <img src="gallery/WhatsApp Image 2025-09-30 at 14.11.03.jpeg" alt="Silivri Villa Temizliği" width="800" height="600"> 
                     <div class="gallery-overlay">
-                    <h3>Boş Ev Temizliği</h3>
-                    <p>Taşınma sonrası derin temizlik</p>
+                    <h3>Mutfak Temizliği</h3>
+                    <p>Mutfak dolabı etiketleri ve tezgahtan inşaat kalıntıları.</p>
                 </div>
             </div>
             <div class="gallery-item">
                     <img src="gallery/WhatsApp Image 2025-09-30 at 14.15.08.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
                     <div class="gallery-overlay">
-                    <h3>İnşaat Sonrası Temizlik</h3>
+                    <h3>İnşaat Sonrası Balkon Temizliği</h3>
                     <p>Yapım artıkları temizliği</p>
                 </div>
             </div>
             <div class="gallery-item">
                     <img src="gallery/WhatsApp Image 2025-09-30 at 14.10.40.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">                
                     <div class="gallery-overlay">
-                    <h3>Ofis Temizliği</h3>
-                    <p>Profesyonel işyeri hijyeni</p>
+                    <h3>Detaylı Temizlik</h3>
+                    <p>Dolap içi ve dışı hijyen</p>
                 </div>
             </div>
             <div class="gallery-item">
                     <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.55.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">        
                     <div class="gallery-overlay">
-                    <h3>Cam Temizliği</h3>
-                    <p>Pencere ve cam yüzey temizliği</p>
+                    <h3>Tamirat ve Tadilat Sonrası Temizlik</h3>
+                    <p>Kuytu köşe ve kenar temizliği</p>
                 </div>
             </div>
             <div class="gallery-item">
                 <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.55 (1).jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
                 <div class="gallery-overlay">
-                    <h3>Koltuk & Halı Yıkama</h3>
-                    <p>Derin koltuk ve halı temizliği</p>
+                    <h3>Görünmeyen Kirlerin Temizliği</h3>
+                    <p></p>
                 </div>
             </div>
             <div class="gallery-item">
                 <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.54.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">
                 <div class="gallery-overlay">
-                    <h3>Mutfak Temizliği</h3>
-                    <p>Detaylı mutfak hijyeni</p>
+                    <h3>Boş Ev Temizliği</h3>
+                    <p>Detaylı ev hijyeni</p>
                 </div>
             </div>
             <div class="gallery-item">
@@ -740,22 +857,15 @@
             <div class="gallery-item">
                 <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.54 (1).jpeg" alt="Silivri Villa Temizliği" width="800" height="600">                
                 <div class="gallery-overlay">
-                    <h3>Bahçe Temizliği</h3>
-                    <p>Dış alan ve bahçe bakımı</p>
+                    <h3>Duşakabin Temizliği</h3>
+                    <p>Hijyenik duş kabini temizliği</p>
                 </div>
             </div>
             <div class="gallery-item">
                 <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.54.jpeg" alt="Silivri Villa Temizliği" width="800" height="600">                
                 <div class="gallery-overlay">
-                    <h3>Zemin Cilalama</h3>
+                    <h3>Zemin Parlatma</h3>
                     <p>Parke ve laminat cilalama</p>
-                </div>
-            </div>
-            <div class="gallery-item">
-                <img src="gallery/WhatsApp Image 2025-09-30 at 14.19.17.jpeg    " alt="Silivri Villa Temizliği" width="800" height="600">                
-                <div class="gallery-overlay">
-                    <h3>Perde Yıkama</h3>
-                    <p>Profesyonel perde temizliği</p>
                 </div>
             </div>
         </div>
@@ -770,6 +880,49 @@
             </div>
         </div>
     </section>
+    <!-- Before After Section -->
+    <section class="before-after-section">
+        <h2>Önce & Sonra</h2>
+        <p class="before-after-intro">Profesyonel temizlik hizmetimizin yarattığı farkı görün</p>
+        <div class="before-after-container">
+            <div class="comparison-item">
+                <div class="comparison-images">
+                    <div class="image-box">
+                        <img src="gallery/WhatsApp Image 2025-10-06 at 09.48.39.jpeg" alt="Temizlik Öncesi">
+                        <div class="image-label">Önce</div>
+                    </div>
+                    <div class="image-box">
+                        <img src="gallery/WhatsApp Image 2025-10-06 at 09.48.39 (1).jpeg" alt="Temizlik Sonrası">
+                        <div class="image-label">Sonra</div>
+                    </div>
+                </div>
+                <div class="comparison-info">
+                    <h3>İnşaat Sonrası Temizliği</h3>
+                    <p>Kapsamlı köşe bucak temizlik</p>
+                </div>
+            </div>
+            
+            <div class="comparison-item">
+                <div class="comparison-images">
+                    <div class="image-box">
+                        <img src="gallery/WhatsApp Image 2025-10-06 at 09.49.40 (1).jpeg" alt="Temizlik Öncesi">
+                        <div class="image-label">Önce</div>
+                    </div>
+                    <div class="image-box">
+                        <img src="gallery/WhatsApp Image 2025-10-06 at 09.49.40.jpeg" alt="Temizlik Sonrası">
+                        <div class="image-label">Sonra</div>
+                    </div>
+                </div>
+                <div class="comparison-info">
+                    <h3>Detaylı Mutfak Temizliği</h3>
+                    <p>Hijyenik mutfaklar...</p>
+                </div>
+            </div>
+        </section>
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <h2>Çalışmalarımızdan Görüntüler</h2>
+        <p class="gallery-intro">Silivri'de gerçekleştirdiğimiz profesyonel temizlik hizmetlerinden örnekler</p>
 
     <!-- About Section -->
     <section class="about">
@@ -977,3 +1130,45 @@
             <p> Creater by 2025 <a href="https://cefudigital.com" style="text-decoration: none; color: white;">CefuDigital Creative Agency</a></p>
         </div>
     </footer>
+    </section>
+        <script>
+// Mobil menü toggle fonksiyonu
+function toggleMenu() {
+    const navMenu = document.getElementById('navMenu');
+    navMenu.classList.toggle('active');
+}
+
+// Menü dışına tıklanınca kapatma ve linke tıklayınca kapatma mantığı
+document.addEventListener('click', function(event) {
+    const header = document.querySelector('header'); // Header'ı ebeveyn olarak al
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('navMenu');
+    const isMenuOpen = navMenu.classList.contains('active');
+
+    // 1. Tıklanan öğe menü butonu İSE: Sadece toggleMenu() çalışır, bu kısım bir şey yapmaz.
+    if (menuToggle.contains(event.target)) {
+        return; // Menü butonuna tıklandıysa, kapatma işlemini yapma
+    }
+
+    // 2. Menü açık VEYA açılıyor İSE ve tıklama header dışındaysa: Kapat
+    // 3. Menü açık VEYA açılıyor İSE ve tıklama navMenu dışındaysa: Kapat
+    if (isMenuOpen && !header.contains(event.target)) {
+        navMenu.classList.remove('active');
+    }
+    
+    // Menü linkine tıklanınca menüyü kapat (Her zaman çalışmalı)
+    if (event.target.closest('#navMenu a')) {
+        navMenu.classList.remove('active');
+    }
+});
+
+// *Alternatif ve daha sade bir menü linki kapatma mantığı:*
+/*
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', function() {
+        document.getElementById('navMenu').classList.remove('active');
+    });
+});
+*/
+    </script>
+    </body>
